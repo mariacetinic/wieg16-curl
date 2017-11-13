@@ -21,20 +21,18 @@ $words = [
 //read the contents of a file into a string
 $content = file_get_contents($fileName);
 
-//strängen tas bort från html, php taggar
-$content = strip_tags($content);
-
-//The explode() function breaks a string into an array.
-$content = explode(" ", $content );
+//var_dump($words); // skriver ut array med ord och antalet ord
 
 $text = $content;
 
-
-//var_dump($words); // skriver ut array med ord och antalet ord
-
-
-
  function count_words($text, array $words) {
+
+
+//strängen tas bort från html, php taggar
+     $text = strip_tags($text);
+
+//The explode() function breaks a string into an array.
+     $text = explode(" ", $text );
 
      foreach ($words as $word => $amount) {
          foreach ($text as $item) {
@@ -43,10 +41,13 @@ $text = $content;
              }
          }
      }
-     var_dump($words);
+     return $words;
  }
 
- count_words($text, $words);
+ //ger felmeddelande
+ echo count_words($text, $words);
+ //test, funkar
+ //var_dump(count_words($text, $words));
 
 
 //Funktionen ska spara ned i en fil
