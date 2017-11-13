@@ -27,7 +27,6 @@ $text = $content;
 
  function count_words($text, array $words) {
 
-
 //strängen tas bort från html, php taggar
      $text = strip_tags($text);
 
@@ -44,10 +43,13 @@ $text = $content;
      return $words;
  }
 
+ foreach (count_words($text, $words) as $word => $amount) {
+echo $word . " => " . $amount . " <br>" ;
+ }
+
  //ger felmeddelande
- echo count_words($text, $words);
- //test, funkar
- //var_dump(count_words($text, $words));
+ //echo count_words($text, $words);
+ //test var_dump(count_words($text, $words)); -endast för debug!
 
 
 //Funktionen ska spara ned i en fil
