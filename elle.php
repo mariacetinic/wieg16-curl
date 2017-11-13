@@ -27,20 +27,27 @@ $content = strip_tags($content);
 //The explode() function breaks a string into an array.
 $content = explode(" ", $content );
 
+$text = $content;
 
-foreach ($words as $word => $amount) {
-    foreach ($content as $item) {
-        if (strpos($item, $word) !== false) {
-            $words[$word] = $words[$word] + 1;
-        }
-    }
- }
-var_dump($words); // skriver ut array med ord och antalet ord
+
+//var_dump($words); // skriver ut array med ord och antalet ord
+
 
 
  function count_words($text, array $words) {
 
+     foreach ($words as $word => $amount) {
+         foreach ($text as $item) {
+             if (strpos($item, $word) !== false) {
+                 $words[$word] = $words[$word] + 1;
+             }
+         }
+     }
+     var_dump($words);
  }
+
+ count_words($text, $words);
+
 
 //Funktionen ska spara ned i en fil
 //Analysera förekomsten av utvalda ord i innehållet
