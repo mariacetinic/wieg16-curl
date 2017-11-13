@@ -43,9 +43,20 @@ $text = $content;
      return $words;
  }
 
- foreach (count_words($text, $words) as $word => $amount) {
-echo $word . " => " . $amount . " <br>" ;
- }
+ ?>
+
+    <ul>
+        <?php foreach (count_words($text, $words) as $word => $amount): ?>
+            <li><?= $word . " => " . $amount ?></li>
+        <?php endforeach; ?>
+    </ul>
+
+<?php
+
+ /*
+foreach (count_words($text, $words) as $word => $amount) {
+    echo $word . " => " . $amount . " <br>" ;
+}*/
 
  //ger felmeddelande
  //echo count_words($text, $words);
